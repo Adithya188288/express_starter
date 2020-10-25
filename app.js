@@ -1,9 +1,13 @@
 const express = require("express")
-const path = require("path")
+const path = require("path");
+const dotenv = require('dotenv');
 
 const app = express()
 
-const PORT = require("./config").PORT
+/*  Load the envionment variables */
+dotenv.config({ path: "./config/config.env", debug: true });
+const PORT = process.env.PORT || 3000;
+
 const errorController = require("./controllers/errorController")
 
 /* Setting up the public directory for serving the static files */
