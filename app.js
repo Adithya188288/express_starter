@@ -7,6 +7,8 @@ const app = express()
 /*  Load the envionment variables */
 dotenv.config({ path: "./config/config.env", debug: true });
 const PORT = process.env.PORT || 3000;
+const ENVIRONMEMT = process.env.NODE_ENV || 'development';
+
 
 const errorController = require("./controllers/errorController")
 
@@ -24,4 +26,4 @@ app.get("/", (req, res, next) => {
 
 app.use(errorController.handle404)
 
-app.listen(PORT, () => console.log("Server Started at port " + PORT))
+app.listen(PORT, () => console.log(`Server Started at ${ENVIRONMEMT} environment at port ` + PORT))

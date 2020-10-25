@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js --ignore 'node_modules/*.js'"
+    "start": "NODE_ENV=production node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
